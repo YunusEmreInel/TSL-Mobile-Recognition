@@ -9,11 +9,18 @@
 
 Computer Engineering graduation project. The app recognizes a sign, shows it with its confidence score, and appends it to a text the user builds up sign by sign. Recognition runs entirely on the phone without an internet connection; Firebase is used only for sign-in and for backing up saved texts.
 
+## Demo
+
 <p align="center">
+  <img src="docs/demo.gif" width="260" alt="Spelling MERHABALAR FIRAT ÜNİVERSİTESİ BİLGİSAYAR MÜHENDİSLİĞİ letter by letter">
+  &nbsp;&nbsp;
   <img src="docs/screenshots/login.jpg" width="220" alt="Login screen">
   &nbsp;&nbsp;
   <img src="docs/screenshots/menu.jpg" width="220" alt="Main menu">
 </p>
+
+Letter mode spelling *"MERHABALAR FIRAT ÜNİVERSİTESİ BİLGİSAYAR MÜHENDİSLİĞİ"* sign by sign, then saving the text to the cloud (GIF at 8× speed). You can see the voting in action: low-confidence predictions are shown in orange and not written, and a letter is only typed once enough frames agree.
+▶ [Full demo video at normal speed (3:20)](docs/demo.mp4)
 
 ---
 
@@ -138,7 +145,7 @@ Export: Keras `.h5` → TensorFlow Lite with **FP16 quantization**. INT8 made th
 │   ├── test_2hands.py, test_i_letter.py   sanity checks on hand detection
 │   └── output/                            trained letter model and evaluation results
 │
-└── docs/screenshots/
+└── docs/                                  demo video / GIF and screenshots
 ```
 
 The datasets and some large intermediate files (e.g. the word and digit `.h5` checkpoints) are not in the repository because of their size. The exported TFLite models the app needs are all included under `mobil/app/src/main/assets/`.
